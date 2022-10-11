@@ -25,11 +25,10 @@ Route::get('/', function () {
 
 Route::get('/posts', [PostController::class, 'index']);
 Route::get('/post/{post:slug}', [PostController::class, 'show']);
+Route::get('/category/{category:slug}', [PostController::class, 'showByCategory']);
+Route::get('/author/{user:username}', [PostController::class, 'showByAuthor']);
 
 Route::get('/categories', [CategoryController::class, 'index']);
-Route::get('/category/{category:slug}', [CategoryController::class, 'show']);
-
-Route::get('/author/{user:username}', [UserController::class, 'show']);
 
 Route::get('/about', function () {
     return view('about', [
