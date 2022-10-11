@@ -20,7 +20,7 @@ use Illuminate\Support\Facades\Route;
 /** ROUTES v2 */
 
 Route::get('/', function () {
-    return view('home', ['title' => 'Home']);
+    return view('home', ['title' => 'Home', 'active' => 'home']);
 });
 
 Route::get('/posts', [PostController::class, 'index']);
@@ -33,6 +33,7 @@ Route::get('/categories', [CategoryController::class, 'index']);
 Route::get('/about', function () {
     return view('about', [
         'title' => 'About',
+        'active' => 'about',
         'name' => "Carens",
         'email' => 'carenskurniawanwijaya@gmail.com',
         'image' => 'contoh-img.jpeg'

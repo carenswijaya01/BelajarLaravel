@@ -19,6 +19,8 @@ class Post extends Model
     //Tidak boleh di isi, sisanya boleh
     protected $guarded = ['id'];
 
+    protected $with = ['category', 'user'];
+
     public function category()
     {
         return $this->belongsTo(Category::class);

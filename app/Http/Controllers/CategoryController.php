@@ -11,6 +11,7 @@ class CategoryController extends Controller
     {
         return view('categories', [
             'title' => "Categories",
+            'active' => 'categories',
             'categories' => Category::all()
         ]);
     }
