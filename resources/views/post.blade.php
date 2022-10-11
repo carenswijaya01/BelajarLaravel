@@ -4,9 +4,10 @@
         <div class="row justify-content-center mb-5">
             <div class="col-md-8">
                 <h1 class="mb-3">{{ $post->title }}</h1>
-                <p>By: <a class="text-decoration-none" href="/author/{{ $post->user->username }}">{{ $post->user->name }}</a>
+                <p>By: <a class="text-decoration-none"
+                        href="/posts?author={{ $post->user->username }}">{{ $post->user->name }}</a>
                     in <a class="text-decoration-none"
-                        href="/category/{{ $post->category->slug }}">{{ $post->category->name }}</a></p>
+                        href="/posts?category={{ $post->category->slug }}">{{ $post->category->name }}</a></p>
 
                 <img src="https://source.unsplash.com/1200x400?{{ $post->category->name }}" class="card-img-top img-fluid"
                     alt="{{ $post->category->name }}">
