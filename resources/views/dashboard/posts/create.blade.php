@@ -46,10 +46,11 @@
             </div>
             <div class="mb-3">
                 <label for="image" class="form-label">Post Image</label>
+                <img class="img-preview img-fluid mb-3 col-sm-5">
                 <input class="form-control @error('image')
                     is-invalid
                 @enderror"
-                    name="image" type="file" id="image">
+                    name="image" type="file" id="image" onchange="previewImage()">
                 @error('image')
                     <div class="invalid-feedback">
                         {{ $message }}
@@ -96,5 +97,21 @@
                 .then(response => response.json())
                 .then(data => slug.value = data.slug)
         });
+    </script>
+
+    <script>
+        function previewImage() {
+            const image = document.querySelector('#image');
+            const imgPreview = document.querySelector('.img-preview');
+
+            imgPreview.style.display = 'block';
+
+            const oFreader = new FileReader();
+            oFreader.readAsDataURL(image.files[0]);
+
+            oFreader.onload = function(oFREvent) {
+                imgPreview.src = oFREvent.target.result;
+            }
+        }
     </script>
 @endsection
