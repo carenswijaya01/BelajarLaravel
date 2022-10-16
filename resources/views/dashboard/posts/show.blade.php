@@ -4,10 +4,10 @@
         <div class="row my-3">
             <div class="col-lg-8">
                 <h1 class="mb-3">{{ $post->title }}</h1>
-                <a href="/dashboard/posts" class="btn btn-success"><span data-feather="arrow-left"></span> Back To All My
+                <a href="/dashboard/posts" class="btn btn-success"><i class="bi bi-arrow-bar-left"></i> Back To All My
                     Posts</a>
-                <a href="/posts" class="btn btn-warning"><span data-feather="edit"></span> Edit</a>
-                <a href="/posts" class="btn btn-danger"><span data-feather="x-circle"></span> Delete</a>
+                <a href="/posts" class="btn btn-warning"><i class="bi bi-pencil-square"></i> Edit</a>
+                <a href="/posts" class="btn btn-danger"><i class="bi bi-x-circle"></i> Delete</a>
 
                 <img src="https://source.unsplash.com/1200x400?{{ $post->category->name }}"
                     class="card-img-top mt-3 img-fluid" alt="{{ $post->category->name }}">
@@ -15,7 +15,6 @@
                 <article class="my-3 fs-5">
                     {!! $post->body !!}
                 </article>
-                <a href="/posts" class="d-block mt-3 text-decoration-none">Back To Posts</a>
             </div>
         </div>
     </div>
